@@ -1,40 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>SM CLEANING JAPAN — ヒーロー確認用</title>
+  <title>SM CLEANING JAPAN — Hero review</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root { color-scheme: light; --ink:#153c34; --muted:#45625a; --cream:#fbfaf6; --lime:#f3d34f; --line:#deded3; }
     * { box-sizing:border-box; }
+    html[data-lang="en"] [lang="ja"],
+    html[data-lang="ja"] [lang="en"] { display:none !important; }
     body { margin:0; background:var(--cream); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+    html[data-lang="ja"] body { font-family:"Noto Sans JP","Hiragino Sans",sans-serif; }
     .preview-note { background:#153c34; color:#fff; text-align:center; padding:9px 16px; font-size:12px; letter-spacing:.04em; }
     header { height:74px; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; max-width:1440px; margin:auto; padding:0 5vw; }
     .brand { color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:12px; font-size:15px; font-weight:800; letter-spacing:.08em; line-height:1.05; }
     .brand-mark { width:28px; height:28px; border-radius:50%; background:#0a1715; flex:none; }
     .brand small { display:block; font-size:8px; letter-spacing:.45em; font-weight:600; margin-top:4px; }
+    .hdr-end { display:flex; align-items:center; gap:28px; }
     nav { display:flex; align-items:center; gap:32px; font-size:14px; font-weight:700; }
     nav a { color:var(--ink); text-decoration:none; }
     .header-cta { background:var(--lime); padding:14px 20px; border-radius:5px; }
+    .lang { border:1px solid #c8cec5; background:#fff; color:var(--ink); border-radius:100px; min-height:40px; padding:0 14px; font:inherit; font-size:13px; font-weight:800; cursor:pointer; }
     main { overflow:hidden; }
     .hero { min-height:calc(100svh - 108px); max-width:1440px; margin:auto; padding:clamp(34px,6vw,90px) 5vw; display:grid; grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr); align-items:center; gap:clamp(30px,5vw,76px); }
     .copy { position:relative; z-index:1; }
     .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--ink); background:#f2efe5; padding:11px 15px; border-radius:100px; font-size:12px; font-weight:800; letter-spacing:.035em; }
     .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#d1a329; }
-    h1 { font-family:Georgia,'Times New Roman',serif; font-weight:700; letter-spacing:-.058em; font-size:clamp(52px,5.4vw,80px); line-height:.96; margin:22px 0 8px; max-width:760px; }
+    h1 { font-family:Georgia,'Times New Roman',serif; font-weight:700; letter-spacing:-.058em; font-size:clamp(52px,5.4vw,80px); line-height:.96; margin:22px 0 18px; max-width:760px; }
     h1 em { display:block; font-style:normal; color:#7b9b79; }
-    .ja { font-family:'Zen Old Mincho','Hiragino Mincho ProN',serif; font-size:clamp(22px,2vw,30px); font-weight:700; letter-spacing:.12em; color:var(--ink); margin:0 0 22px; }
+    html[data-lang="ja"] h1 { font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif; letter-spacing:.04em; font-size:clamp(40px,4.8vw,72px); line-height:1.15; }
     .intro { font-size:clamp(17px,1.5vw,20px); line-height:1.55; color:var(--muted); max-width:510px; margin:0 0 30px; }
     .actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
     .button { display:inline-flex; justify-content:center; align-items:center; min-height:55px; padding:0 23px; border-radius:6px; font-size:15px; font-weight:800; text-decoration:none; }
     .button.primary { background:var(--lime); color:#0f3029; box-shadow:0 8px 22px rgba(108,87,11,.1); }
     .button.secondary { color:var(--ink); border:1px solid #c8cec5; }
     .trust { display:flex; gap:22px; flex-wrap:wrap; color:var(--muted); font-size:13px; font-weight:700; margin-top:25px; }
-    .trust span::before { content:"✓"; color:#577963; margin-right:7px; }
+    .trust > span::before { content:"✓"; color:#577963; margin-right:7px; }
     .visual { position:relative; min-width:0; }
     .visual::before { content:""; position:absolute; inset:-26px -28px 34px 40px; background:#ecede0; border-radius:45% 45% 16px 16px; transform:rotate(4deg); }
     .frame { position:relative; aspect-ratio:1.24; border-radius:20px; overflow:hidden; background:#d9d9cf; box-shadow:0 24px 56px rgba(25,58,48,.18); }
@@ -52,12 +57,13 @@
       header { height:64px; }
       .brand { font-size:12px; }
       .brand-mark { width:22px; height:22px; }
+      .lang { min-height:34px; padding:0 12px; font-size:12px; }
       .preview-note { padding:7px 12px; font-size:10px; letter-spacing:0; line-height:1.45; }
       .hero { padding:28px 20px 35px; gap:28px; }
-      .copy, h1, h1 em, .intro, .ja { max-width:100%; }
+      .copy, h1, h1 em, .intro { max-width:100%; }
       .eyebrow { font-size:10px; padding:9px 12px; }
-      h1 { font-size:46px; margin:16px 0 6px; letter-spacing:-.045em; }
-      .ja { font-size:20px; letter-spacing:.08em; margin-bottom:14px; }
+      h1 { font-size:46px; margin:16px 0 14px; letter-spacing:-.045em; }
+      html[data-lang="ja"] h1 { font-size:40px; letter-spacing:.02em; }
       .intro { font-size:15px; line-height:1.45; margin-bottom:19px; }
       .actions { gap:10px; }
       .button { min-height:49px; font-size:14px; }
@@ -71,40 +77,94 @@
     }
     @media (prefers-reduced-motion:reduce) { video { display:none; } .still { display:block; } .play-toggle { display:none; } }
   </style>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search).get('lang');
+      var saved = '';
+      try { saved = localStorage.getItem('lang') || ''; } catch (e) {}
+      var lang = (q === 'ja' || q === 'en') ? q : ((saved === 'ja' || saved === 'en') ? saved : 'en');
+      document.documentElement.dataset.lang = lang;
+      document.documentElement.lang = lang;
+      document.title = lang === 'ja' ? 'SM CLEANING JAPAN — ヒーロー確認用' : 'SM CLEANING JAPAN — Hero review';
+      if (q === 'ja' || q === 'en') { try { localStorage.setItem('lang', q); } catch (e) {} }
+    })();
+  </script>
 </head>
 <body>
-  <div class="preview-note">確認用です。本番サイトはまだ変わっていません。</div>
+  <div class="preview-note"><span lang="en">For review. The live website has not changed.</span><span lang="ja">確認用です。本番サイトはまだ変わっていません。</span></div>
   <header>
     <a class="brand" href="https://preview-b.sm-cleaning-japan.pages.dev/"><span class="brand-mark"></span><span>SM CLEANING<small>JAPAN</small></span></a>
-    <nav aria-label="Main navigation"><a href="https://preview-b.sm-cleaning-japan.pages.dev/services.html">Services</a><a href="https://preview-b.sm-cleaning-japan.pages.dev/areas.html">Service Areas</a><a href="https://preview-b.sm-cleaning-japan.pages.dev/quote.html">Instant Quote</a><a class="header-cta" href="https://preview-b.sm-cleaning-japan.pages.dev/quote.html">Get a Quote</a></nav>
+    <div class="hdr-end">
+      <nav aria-label="Main navigation">
+        <a href="https://preview-b.sm-cleaning-japan.pages.dev/services.html"><span lang="en">Services</span><span lang="ja">サービス</span></a>
+        <a href="https://preview-b.sm-cleaning-japan.pages.dev/areas.html"><span lang="en">Service Areas</span><span lang="ja">対応エリア</span></a>
+        <a href="https://preview-b.sm-cleaning-japan.pages.dev/quote.html"><span lang="en">Instant Quote</span><span lang="ja">自動見積もり</span></a>
+        <a class="header-cta" href="https://preview-b.sm-cleaning-japan.pages.dev/quote.html"><span lang="en">Get a Quote</span><span lang="ja">見積もり</span></a>
+      </nav>
+      <button class="lang" type="button" data-lang-toggle aria-label="Switch language / 言語切替"><span lang="en">日本語</span><span lang="ja">English</span></button>
+    </div>
   </header>
   <main>
     <section class="hero">
       <div class="copy">
-        <div class="eyebrow">SOUTH YARRA · JAPANESE CARE</div>
-        <h1>Melbourne<em>cleaning<br>company.</em></h1>
-        <p class="ja">メルボルンの清掃会社</p>
-        <p class="intro">Home, end of lease and business cleaning.<br>A local South Yarra team, thoughtful to the corners.</p>
-        <div class="actions"><a class="button primary" href="https://preview-b.sm-cleaning-japan.pages.dev/quote.html">Get an Instant Quote →</a><a class="button secondary" href="https://preview-b.sm-cleaning-japan.pages.dev/services.html">Explore Services</a></div>
-        <div class="trust"><span>Based in South Yarra</span><span>Clear, upfront pricing</span></div>
+        <div class="eyebrow"><span lang="en">SOUTH YARRA · JAPANESE CARE</span><span lang="ja">サウスヤラ · 日本のていねいさ</span></div>
+        <h1><span lang="en">Melbourne<em>cleaning<br>company.</em></span><span lang="ja">メルボルンの<em>清掃会社</em></span></h1>
+        <p class="intro"><span lang="en">Home, end of lease and business cleaning.<br>A local South Yarra team, thoughtful to the corners.</span><span lang="ja">ご自宅、退去時、オフィスや店舗の清掃。<br>サウスヤラの地元チームが、すみずみまで丁寧に。</span></p>
+        <div class="actions">
+          <a class="button primary" href="https://preview-b.sm-cleaning-japan.pages.dev/quote.html"><span lang="en">Get an Instant Quote →</span><span lang="ja">自動見積もり →</span></a>
+          <a class="button secondary" href="https://preview-b.sm-cleaning-japan.pages.dev/services.html"><span lang="en">Explore Services</span><span lang="ja">サービスを見る</span></a>
+        </div>
+        <div class="trust"><span><span lang="en">Based in South Yarra</span><span lang="ja">サウスヤラ拠点</span></span><span><span lang="en">Clear, upfront pricing</span><span lang="ja">明朗な料金</span></span></div>
       </div>
       <div class="visual">
         <div class="frame">
           <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="sm-cleaning-hero-poster.jpg?v=3" aria-label="SM CLEANING JAPAN staff cleaning a Melbourne home"><source src="sm-cleaning-hero-loop.mp4?v=3" type="video/mp4"></video>
           <img class="still" src="sm-cleaning-hero-poster.jpg?v=3" alt="SM CLEANING JAPAN cleaner wiping a glass door in a Melbourne home">
-          <div class="video-label">REAL TEAM · REAL WORK</div>
-          <button class="play-toggle" id="toggle" type="button" aria-label="Pause video">Pause video</button>
+          <div class="video-label"><span lang="en">REAL TEAM · REAL WORK</span><span lang="ja">実際のスタッフ · 実際の作業</span></div>
+          <button class="play-toggle" id="toggle" type="button" aria-label="Pause video"><span lang="en">Pause video</span><span lang="ja">一時停止</span></button>
         </div>
       </div>
     </section>
-    <p class="below">Video concept using the team's real cleaning footage. Review the layout and motion here; the current preview website is separate.</p>
+    <p class="below"><span lang="en">Video concept using the team's real cleaning footage. Review the layout and motion here; the current preview website is separate.</span><span lang="ja">チームの実際の清掃映像を使った動画案です。ここで配置と動きを見てください。今のプレビューサイトとは別のページです。</span></p>
   </main>
   <script>
     const video = document.getElementById('heroVideo');
     const toggle = document.getElementById('toggle');
+    const still = document.querySelector('.still');
+    const playText = {
+      pause: { en: 'Pause video', ja: '一時停止' },
+      play: { en: 'Play video', ja: '再生' }
+    };
+    function mediaLang() {
+      const ja = document.documentElement.dataset.lang === 'ja';
+      video.setAttribute('aria-label', ja
+        ? 'SM CLEANING JAPAN のスタッフがメルボルンの自宅を清掃している様子'
+        : 'SM CLEANING JAPAN staff cleaning a Melbourne home');
+      still.alt = ja
+        ? 'SM CLEANING JAPAN のスタッフがメルボルンの自宅でガラス戸を拭いている'
+        : 'SM CLEANING JAPAN cleaner wiping a glass door in a Melbourne home';
+      document.title = ja ? 'SM CLEANING JAPAN — ヒーロー確認用' : 'SM CLEANING JAPAN — Hero review';
+    }
+    function paintPlay(playing) {
+      const state = playing ? 'pause' : 'play';
+      toggle.querySelector('[lang="en"]').textContent = playText[state].en;
+      toggle.querySelector('[lang="ja"]').textContent = playText[state].ja;
+      const lang = document.documentElement.dataset.lang === 'ja' ? 'ja' : 'en';
+      toggle.setAttribute('aria-label', playText[state][lang]);
+    }
+    mediaLang();
     toggle.addEventListener('click', () => {
-      if (video.paused) { video.play(); toggle.textContent = 'Pause video'; toggle.setAttribute('aria-label', 'Pause video'); }
-      else { video.pause(); toggle.textContent = 'Play video'; toggle.setAttribute('aria-label', 'Play video'); }
+      if (video.paused) video.play();
+      else video.pause();
+      paintPlay(!video.paused);
+    });
+    document.querySelector('[data-lang-toggle]').addEventListener('click', () => {
+      const next = document.documentElement.dataset.lang === 'ja' ? 'en' : 'ja';
+      document.documentElement.dataset.lang = next;
+      document.documentElement.lang = next;
+      try { localStorage.setItem('lang', next); } catch (e) {}
+      mediaLang();
+      paintPlay(!video.paused);
     });
   </script>
 </body>
